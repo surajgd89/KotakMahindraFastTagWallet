@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;900&display=swap"
+            rel="stylesheet"
+        />
+
+        <link rel="stylesheet" href="css/bootstrap-reboot.css" />
+        <link rel="stylesheet" href="css/bootstrap-grid.css" />
+        <link rel="stylesheet" href="css/style.css" />
+    </head>
+    <body>
+        <div class="wrapper">
+            <header class="header">
+                <div class="container">
+                    <div class="navbar">
+                        <a class="logo" href="#">
+                            <img src="images/kotak-logo.svg" alt="Kotak Logo" />
+                        </a>
+                        <a class="logo" href="#">
+                            <img
+                                src="images/fastag-logo.svg"
+                                alt="Kotak Logo"
+                            />
+                        </a>
+                    </div>
+                </div>
+            </header>
+
+            <section class="content">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-7">
+                            <h1 class="heading">
+                                <span>Welcome to</span>
+                                <div>Kotak NETC FASTag Wallet</div>
+                            </h1>
+                            <div class="page-form">
+                                <!-- FIRST -->
+                                <div id="step1">
+                                    <div class="form-group">
+                                        <div class="control-group">
+                                            <select class="form-control">
+                                                <option value="1">
+                                                    VRN / VIN / Chasis No. For
+                                                    Retail Fastag Wallet
+                                                </option>
+                                                <option value="2">
+                                                    Customer ID For Fleet Master
+                                                    Account
+                                                </option>
+                                                <option value="3">
+                                                    CP ID For Channel Partner
+                                                    eMoney Account
+                                                </option>
+                                            </select>
+                                            <input
+                                                type="text"
+                                                class="form-control"
+                                                placeholder="Enter text here..."
+                                            />
+                                        </div>
+                                    </div>
+                                    <div class="button-group">
+                                        <button type="button" class="btn">
+                                            SUBMIT
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <!-- SECOND -->
+                                <div id="step2">
+                                    <div class="info-msg">
+                                        <span
+                                            >OTP has been sent to your
+                                            <br />registered mobile number
+                                            <strong>+91 XXX XXX 5153</strong>
+                                        </span>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="digit-group">
+                                            <input
+                                                class="form-control"
+                                                type="text"
+                                                maxlength="1"
+                                                size="1"
+                                                id="digit1"
+                                            />
+                                            <input
+                                                class="form-control"
+                                                type="text"
+                                                maxlength="1"
+                                                size="1"
+                                                id="digit2"
+                                            />
+                                            <input
+                                                class="form-control"
+                                                type="text"
+                                                maxlength="1"
+                                                size="1"
+                                                id="digit3"
+                                            />
+                                            <input
+                                                class="form-control"
+                                                type="text"
+                                                maxlength="1"
+                                                size="1"
+                                                id="digit4"
+                                            />
+                                            <input
+                                                class="form-control"
+                                                type="text"
+                                                maxlength="1"
+                                                size="1"
+                                                id="digit5"
+                                            />
+                                            <input
+                                                class="form-control"
+                                                type="text"
+                                                maxlength="1"
+                                                size="1"
+                                                id="digit6"
+                                            />
+                                        </div>
+                                    </div>
+
+                                    <div class="resend-sec">
+                                        <div class="timer">
+                                            Time Remaining 01:25
+                                        </div>
+                                        <div class="resend">
+                                            Don't receive the OTP ?
+                                            <a href="#" disabled>Resend OTP</a>
+                                        </div>
+                                    </div>
+
+                                    <div class="button-group">
+                                        <button type="button" class="btn">
+                                            VERIFY OTP
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <!-- THIRD -->
+                                <div id="step3">
+                                    <ul class="details-list">
+                                        <li>
+                                            <span>Current Balance</span>
+                                            <span>XXXXX.XX</span>
+                                        </li>
+
+                                        <li>
+                                            <span>Mobile Number</span>
+                                            <span>+91 XXX XXX 5153</span>
+                                        </li>
+
+                                        <li>
+                                            <span
+                                                >VRN / VIN / Chasis No. For
+                                                Retail Fastag Wallet</span
+                                            >
+                                            <span>ABCDMH00001234567</span>
+                                        </li>
+                                    </ul>
+                                    <div class="history">
+                                        <a href="#">View Transaction History</a>
+                                    </div>
+                                    <div class="txn-list">
+                                        <table>
+                                            <tr>
+                                                <th>Date & Time</th>
+                                                <th>Txn. No</th>
+                                                <th>Amount</th>
+                                            </tr>
+                                            <tr>
+                                                <td>28/03/2024 12:20 AM</td>
+                                                <td>TXNABC1234567</td>
+                                                <td>1200.00</td>
+                                            </tr>
+                                            <tr>
+                                                <td>28/03/2024 12:20 AM</td>
+                                                <td>TXNABC1234567</td>
+                                                <td>1200.00</td>
+                                            </tr>
+                                            <tr>
+                                                <td>28/03/2024 12:20 AM</td>
+                                                <td>TXNABC1234567</td>
+                                                <td>1200.00</td>
+                                            </tr>
+                                            <tr>
+                                                <td>28/03/2024 12:20 AM</td>
+                                                <td>TXNABC1234567</td>
+                                                <td>1200.00</td>
+                                            </tr>
+                                            <tr>
+                                                <td>28/03/2024 12:20 AM</td>
+                                                <td>TXNABC1234567</td>
+                                                <td>1200.00</td>
+                                            </tr>
+                                            <tr>
+                                                <td>28/03/2024 12:20 AM</td>
+                                                <td>TXNABC1234567</td>
+                                                <td>1200.00</td>
+                                            </tr>
+                                            <tr>
+                                                <td>28/03/2024 12:20 AM</td>
+                                                <td>TXNABC1234567</td>
+                                                <td>1200.00</td>
+                                            </tr>
+                                            <tr>
+                                                <td>28/03/2024 12:20 AM</td>
+                                                <td>TXNABC1234567</td>
+                                                <td>1200.00</td>
+                                            </tr>
+                                            <tr>
+                                                <td>28/03/2024 12:20 AM</td>
+                                                <td>TXNABC1234567</td>
+                                                <td>1200.00</td>
+                                            </tr>
+                                            <tr>
+                                                <td>28/03/2024 12:20 AM</td>
+                                                <td>TXNABC1234567</td>
+                                                <td>1200.00</td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                    <div class="button-group">
+                                        <button type="button" class="btn">
+                                            ADD MONEY
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-5">
+                            <div class="artwork">
+                                <img src="images/artwork.svg" alt="Artwork" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <footer class="footer">
+                <div class="container">
+                    <div class="copyright-text">
+                        Copyright © 2024 Kotak Mahindra Bank. All Rights
+                        Reserved
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </body>
+</html>

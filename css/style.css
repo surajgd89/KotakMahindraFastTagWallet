@@ -1,0 +1,305 @@
+html {
+  height: 100%;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 16px;
+  line-height: 1.5;
+  height: 100%;
+  color: #101010;
+}
+
+strong {
+  font-weight: 600;
+}
+
+.wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  min-height: 100%;
+}
+
+.header .navbar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  min-height: 80px;
+}
+.header .navbar .logo {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+.header .navbar .logo img {
+  height: 50px;
+}
+
+.content {
+  padding: 60px 0;
+  background: #f4fbff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 auto;
+          flex: 1 0 auto;
+}
+.content .container > .row {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.content .heading {
+  text-align: center;
+  margin-bottom: 0;
+}
+.content .heading > span {
+  font-weight: 600;
+  font-size: 16px;
+  text-transform: uppercase;
+  color: #6f6f6f;
+}
+.content .heading > div {
+  font-weight: 700;
+  font-size: 38px;
+  color: #101010;
+}
+.content .artwork {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.content .artwork img {
+  height: 250px;
+}
+.content .page-form {
+  background-color: #fff;
+  margin: 40px auto;
+  padding: 40px;
+  max-width: 600px;
+  border-radius: 3px;
+  -webkit-box-shadow: 0 8px 12px rgba(0, 0, 0, 0.0784313725);
+          box-shadow: 0 8px 12px rgba(0, 0, 0, 0.0784313725);
+}
+.content .page-form .info-msg {
+  text-align: center;
+  margin-bottom: 20px;
+}
+.content .page-form .form-group {
+  position: relative;
+  background: none;
+}
+.content .page-form .form-group .form-control {
+  border: 1px solid #ccc;
+  background: #fff;
+  position: relative;
+  width: 100%;
+  padding: 15px;
+  font-size: 16px;
+  color: #333;
+  min-height: 60px;
+  z-index: 0;
+  outline: 0;
+}
+.content .page-form .control-group {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 20px;
+  overflow: hidden;
+  border-radius: 3px;
+}
+.content .page-form .control-group .form-control {
+  border: 0;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  min-height: 60px;
+}
+.content .page-form .control-group select.form-control {
+  border-bottom: 1px solid #ccc;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-image: url('data:image/svg+xml;utf8,<svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>');
+  background-repeat: no-repeat;
+  background-position: right 15px center;
+  cursor: pointer;
+  padding-right: 40px;
+  white-space: normal;
+}
+.content .page-form .control-group select.form-control option {
+  font-size: 14px;
+}
+.content .page-form .control-group input.form-control {
+  font-weight: 400;
+}
+.content .page-form .control-group:focus-within {
+  border-color: red;
+}
+.content .page-form .digit-group {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-column-gap: 10px;
+     -moz-column-gap: 10px;
+          column-gap: 10px;
+  max-width: 350px;
+  margin: 0 auto;
+  margin-bottom: 20px;
+}
+.content .page-form .digit-group .form-control {
+  border: 1px solid #ccc;
+  text-align: center;
+  padding: 8px;
+  font-size: 20px;
+  font-weight: 500;
+  min-height: 50px;
+  border-radius: 3px;
+}
+.content .page-form .digit-group .form-control:focus {
+  border-color: red;
+}
+.content .page-form .resend-sec {
+  text-align: center;
+  margin-bottom: 20px;
+}
+.content .page-form .resend-sec .timer {
+  font-weight: 600;
+  font-size: 14px;
+  color: #0070e0;
+  margin-bottom: 4px;
+}
+.content .page-form .resend-sec .resend a {
+  color: #0070e0;
+}
+.content .page-form .details-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+.content .page-form .details-list li {
+  padding: 15px;
+  border-bottom: 1px solid #ccc;
+}
+.content .page-form .details-list li:last-child {
+  border-bottom: 0;
+}
+.content .page-form .details-list li span {
+  display: block;
+}
+.content .page-form .details-list li span:first-child {
+  font-size: 14px;
+  color: #6f6f6f;
+  margin-bottom: 4px;
+}
+.content .page-form .details-list li span:last-child {
+  font-size: 16px;
+  font-weight: 600;
+}
+.content .page-form .history {
+  text-align: center;
+  margin-bottom: 20px;
+}
+.content .page-form .history a {
+  color: #0070e0;
+}
+.content .page-form .txn-list {
+  margin-bottom: 20px;
+  overflow-x: auto;
+  padding: 15px;
+  background: #f5f5f5;
+  border-radius: 3px;
+}
+.content .page-form .txn-list table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #fff;
+}
+.content .page-form .txn-list table tr th {
+  color: red;
+  font-weight: 500;
+  font-size: 14px;
+}
+.content .page-form .txn-list table tr td {
+  font-size: 13px;
+}
+.content .page-form .txn-list table tr td,
+.content .page-form .txn-list table tr th {
+  border: 1px solid #ccc;
+  padding: 10px;
+  white-space: nowrap;
+}
+.content .page-form .btn {
+  width: 100%;
+  background-color: red;
+  color: #fff;
+  padding: 15px;
+  font-size: 18px;
+  font-weight: 500;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  min-height: 50px;
+  cursor: pointer;
+  border: 0;
+  outline: 0;
+  border-radius: 3px;
+}
+
+.footer .copyright-text {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  min-height: 80px;
+  padding: 15px 0;
+}/*# sourceMappingURL=style.css.map */
