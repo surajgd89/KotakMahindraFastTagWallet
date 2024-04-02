@@ -1,301 +1,284 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Document</title>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link
-            href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;900&display=swap"
-            rel="stylesheet"
-        />
-        <link rel="stylesheet" href="css/bootstrap-reboot.css" />
-        <link rel="stylesheet" href="css/bootstrap-grid.css" />
-        <link rel="stylesheet" href="css/style.css" />
-    </head>
-    <body>
-        <div class="wrapper">
-            <header class="header">
-                <div class="container">
-                    <div class="navbar">
-                        <a class="logo" href="#">
-                            <img src="images/kotak-logo.svg" alt="Kotak Logo" />
-                        </a>
-                        <a class="logo" href="#">
-                            <img
-                                src="images/fastag-logo.svg"
-                                alt="Kotak Logo"
-                            />
-                        </a>
-                    </div>
-                </div>
-            </header>
-            <section class="content">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-12">
-                            <!-- <div class="artwork">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/bootstrap-reboot.css" />
+    <link rel="stylesheet" href="css/bootstrap-grid.css" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="header">
+        <div class="container">
+          <div class="navbar">
+            <a class="logo" href="#">
+              <object
+                data="images/kotak-logo.svg"
+                type="image/svg+xml"
+                class="logo"
+                height="50px"
+              ></object>
+            </a>
+            <a class="logo" href="#">
+              <object
+                data="images/fastag-logo.svg"
+                type="image/svg+xml"
+                class="logo"
+                height="50px"
+              ></object>
+            </a>
+          </div>
+        </div>
+      </header>
+      <section class="content">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <!-- <div class="artwork">
                                 <img src="images/artwork.svg" alt="Artwork" />
                             </div> -->
-                            <h1 class="heading">
-                                <span>Welcome to</span>
-                                <div>Kotak NETC FASTag Wallet</div>
-                            </h1>
-                            <div class="page-form">
-                                <!-- Initial_Sec -->
-                                <div id="Initial_Sec">
-                                    <div class="form-group">
-                                        <div class="control-group">
-                                            <select
-                                                class="form-control"
-                                                id="selectAnyOne"
-                                            >
-                                                <option
-                                                    value="VRN / VIN / Chasis No."
-                                                >
-                                                    VRN / VIN / Chasis No. For
-                                                    Retail Fastag Wallet
-                                                </option>
-                                                <option value="Customer ID">
-                                                    Customer ID For Fleet Master
-                                                    Account
-                                                </option>
-                                                <option value="CP ID">
-                                                    CP ID For Channel Partner
-                                                    eMoney Account
-                                                </option>
-                                            </select>
-                                            <input
-                                                type="text"
-                                                class="form-control"
-                                                id="inputValue"
-                                                placeholder="Enter text here..."
-                                            />
-                                        </div>
-                                        <span class="error" id="inputValue_Error"
-                                            >This field is required</span
-                                        >
-                                    </div>
-                                    <div class="button-group">
-                                        <button
-                                            type="button"
-                                            class="btn"
-                                            id="submit_Btn"
-                                        >
-                                            SUBMIT
-                                        </button>
-                                    </div>
-                                </div>
-
-                                <!-- OTP_Sec -->
-                                <div id="OTP_Sec">
-                                    <div class="info-msg">
-                                        <img src="images/otp.gif" alt="" />
-                                        <span
-                                            >OTP has been sent to your
-                                            <br />registered mobile number
-                                            <strong>+91 XXX XXX 5153</strong>
-                                        </span>
-                                    </div>
-                                    <div class="form-group">
-                                        <div class="digit-group">
-                                            <input
-                                                autocomplete="off"
-                                                class="form-control digit"
-                                                type="text"
-                                                maxlength="1"
-                                                size="1"
-                                                id="digit1"
-                                                oninput="this.value = this.value.replace(/[^0-9]/g, '');"
-                                            />
-                                            <input
-                                                autocomplete="off"
-                                                class="form-control digit"
-                                                type="text"
-                                                maxlength="1"
-                                                size="1"
-                                                id="digit2"
-                                                oninput="this.value = this.value.replace(/[^0-9]/g, '');"
-                                            />
-                                            <input
-                                                autocomplete="off"
-                                                class="form-control digit"
-                                                type="text"
-                                                maxlength="1"
-                                                size="1"
-                                                id="digit3"
-                                                oninput="this.value = this.value.replace(/[^0-9]/g, '');"
-                                            />
-                                            <input
-                                                autocomplete="off"
-                                                class="form-control digit"
-                                                type="text"
-                                                maxlength="1"
-                                                size="1"
-                                                id="digit4"
-                                                oninput="this.value = this.value.replace(/[^0-9]/g, '');"
-                                            />
-                                            <input
-                                                autocomplete="off"
-                                                class="form-control digit"
-                                                type="text"
-                                                maxlength="1"
-                                                size="1"
-                                                id="digit5"
-                                                oninput="this.value = this.value.replace(/[^0-9]/g, '');"
-                                            />
-                                            <input
-                                                autocomplete="off"
-                                                class="form-control digit"
-                                                type="text"
-                                                maxlength="1"
-                                                size="1"
-                                                id="digit6"
-                                                oninput="this.value = this.value.replace(/[^0-9]/g, '');"
-                                            />
-                                        </div>
-                                        <span class="error">Incorrect OTP</span>
-                                    </div>
-                                    <div class="resend-sec">
-                                        <div class="timer">
-                                            Time Remaining:&nbsp;
-                                            <span id="countdown">01:25</span>
-                                        </div>
-                                        <div class="resend">
-                                            Don't receive the OTP ?
-                                            <a href="#" id="resendOTP" disabled
-                                                >Resend OTP</a
-                                            >
-                                        </div>
-                                    </div>
-                                    <div class="button-group">
-                                        <button
-                                            type="button"
-                                            class="btn"
-                                            id="verify_Btn"
-                                        >
-                                            VERIFY OTP
-                                        </button>
-                                    </div>
-                                </div>
-
-                                <!-- Details_Sec -->
-                                <div id="Details_Sec">
-                                    <ul class="details-list">
-                                        <li>
-                                            <span>Current Balance</span>
-                                            <span>INR 539.00</span>
-                                        </li>
-                                        <li>
-                                            <span>Mobile Number</span>
-                                            <span>+91 XXX XXX 5153</span>
-                                        </li>
-                                        <li>
-                                            <span
-                                                >VRN / VIN / Chasis No. For
-                                                Retail Fastag Wallet</span
-                                            >
-                                            <span>ABCDMH00001234567</span>
-                                        </li>
-                                    </ul>
-                                    <div class="button-group">
-                                        <button type="button" class="btn">
-                                            ADD MONEY
-                                        </button>
-                                    </div>
-                                    <div class="history">
-                                        <a href="#" id="view_History"
-                                            >View Transaction History</a
-                                        >
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+              <h1 class="heading">
+                <span>Welcome to</span>
+                <div>Kotak NETC FASTag Wallet</div>
+              </h1>
+              <div class="page-form">
+                <!-- Initial_Sec -->
+                <div id="Initial_Sec">
+                  <div class="form-group">
+                    <div class="control-group">
+                      <select class="form-control" id="selectAnyOne">
+                        <option value="VRN / VIN / Chasis No.">
+                          VRN / VIN / Chasis No. For Retail Fastag Wallet
+                        </option>
+                        <option value="Customer ID">
+                          Customer ID For Fleet Master Account
+                        </option>
+                        <option value="CP ID">
+                          CP ID For Channel Partner eMoney Account
+                        </option>
+                      </select>
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="inputValue"
+                        placeholder="Enter text here..."
+                      />
                     </div>
+                    <span class="error" id="inputValue_Error"
+                      >This field is required</span
+                    >
+                  </div>
+                  <div class="button-group">
+                    <button type="button" class="btn" id="submit_Btn">
+                      SUBMIT
+                    </button>
+                  </div>
                 </div>
-            </section>
-            <footer class="footer">
-                <div class="container">
-                    <div class="copyright-text">
-                        Copyright&nbsp;&copy;&nbsp;<span id="currentYear"></span
-                        >&nbsp;Kotak Mahindra Bank. All Rights Reserved
-                    </div>
-                </div>
-            </footer>
-        </div>
 
-        <div id="txnHistory_Modal" class="modal">
-            <div class="modal-content">
-                <div class="modal-header">
-                    Transaction History
-                    <span class="close"></span>
-                </div>
-                <div class="modal-body">
-                    <div class="txn-list">
-                        <table>
-                            <tr>
-                                <th>Date & Time</th>
-                                <th>Txn. No</th>
-                                <th>Amount</th>
-                            </tr>
-                            <tr>
-                                <td>28/03/2024 12:20 AM</td>
-                                <td>TXNABC1234567</td>
-                                <td>1200.00</td>
-                            </tr>
-                            <tr>
-                                <td>28/03/2024 12:20 AM</td>
-                                <td>TXNABC1234567</td>
-                                <td>1200.00</td>
-                            </tr>
-                            <tr>
-                                <td>28/03/2024 12:20 AM</td>
-                                <td>TXNABC1234567</td>
-                                <td>1200.00</td>
-                            </tr>
-                            <tr>
-                                <td>28/03/2024 12:20 AM</td>
-                                <td>TXNABC1234567</td>
-                                <td>1200.00</td>
-                            </tr>
-                            <tr>
-                                <td>28/03/2024 12:20 AM</td>
-                                <td>TXNABC1234567</td>
-                                <td>1200.00</td>
-                            </tr>
-                            <tr>
-                                <td>28/03/2024 12:20 AM</td>
-                                <td>TXNABC1234567</td>
-                                <td>1200.00</td>
-                            </tr>
-                            <tr>
-                                <td>28/03/2024 12:20 AM</td>
-                                <td>TXNABC1234567</td>
-                                <td>1200.00</td>
-                            </tr>
-                            <tr>
-                                <td>28/03/2024 12:20 AM</td>
-                                <td>TXNABC1234567</td>
-                                <td>1200.00</td>
-                            </tr>
-                            <tr>
-                                <td>28/03/2024 12:20 AM</td>
-                                <td>TXNABC1234567</td>
-                                <td>1200.00</td>
-                            </tr>
-                            <tr>
-                                <td>28/03/2024 12:20 AM</td>
-                                <td>TXNABC1234567</td>
-                                <td>1200.00</td>
-                            </tr>
-                        </table>
+                <!-- OTP_Sec -->
+                <div id="OTP_Sec">
+                  <div class="info-msg">
+                    <img src="images/otp.gif" alt="" />
+                    <span
+                      >OTP has been sent to your <br />registered mobile number
+                      <strong>+91 XXX XXX 5153</strong>
+                    </span>
+                  </div>
+                  <div class="form-group">
+                    <div class="digit-group">
+                      <input
+                        autocomplete="off"
+                        class="form-control digit"
+                        type="text"
+                        maxlength="1"
+                        size="1"
+                        id="digit1"
+                        oninput="this.value = this.value.replace(/[^0-9]/g, '');"
+                      />
+                      <input
+                        autocomplete="off"
+                        class="form-control digit"
+                        type="text"
+                        maxlength="1"
+                        size="1"
+                        id="digit2"
+                        oninput="this.value = this.value.replace(/[^0-9]/g, '');"
+                      />
+                      <input
+                        autocomplete="off"
+                        class="form-control digit"
+                        type="text"
+                        maxlength="1"
+                        size="1"
+                        id="digit3"
+                        oninput="this.value = this.value.replace(/[^0-9]/g, '');"
+                      />
+                      <input
+                        autocomplete="off"
+                        class="form-control digit"
+                        type="text"
+                        maxlength="1"
+                        size="1"
+                        id="digit4"
+                        oninput="this.value = this.value.replace(/[^0-9]/g, '');"
+                      />
+                      <input
+                        autocomplete="off"
+                        class="form-control digit"
+                        type="text"
+                        maxlength="1"
+                        size="1"
+                        id="digit5"
+                        oninput="this.value = this.value.replace(/[^0-9]/g, '');"
+                      />
+                      <input
+                        autocomplete="off"
+                        class="form-control digit"
+                        type="text"
+                        maxlength="1"
+                        size="1"
+                        id="digit6"
+                        oninput="this.value = this.value.replace(/[^0-9]/g, '');"
+                      />
                     </div>
+                    <span class="error">Incorrect OTP</span>
+                  </div>
+                  <div class="resend-sec">
+                    <div class="timer">
+                      Time Remaining:&nbsp;
+                      <span id="countdown">01:25</span>
+                    </div>
+                    <div class="resend">
+                      Don't receive the OTP ?
+                      <a href="#" id="resendOTP" disabled>Resend OTP</a>
+                    </div>
+                  </div>
+                  <div class="button-group">
+                    <button type="button" class="btn" id="verify_Btn">
+                      VERIFY OTP
+                    </button>
+                  </div>
                 </div>
+
+                <!-- Details_Sec -->
+                <div id="Details_Sec">
+                  <ul class="details-list">
+                    <li>
+                      <span>Current Balance</span>
+                      <span>INR 539.00</span>
+                    </li>
+                    <li>
+                      <span>Mobile Number</span>
+                      <span>+91 XXX XXX 5153</span>
+                    </li>
+                    <li>
+                      <span
+                        >VRN / VIN / Chasis No. For Retail Fastag Wallet</span
+                      >
+                      <span>ABCDMH00001234567</span>
+                    </li>
+                  </ul>
+                  <div class="button-group">
+                    <button type="button" class="btn">ADD MONEY</button>
+                  </div>
+                  <div class="history">
+                    <a href="#" id="view_History">View Transaction History</a>
+                  </div>
+                </div>
+              </div>
             </div>
+          </div>
         </div>
+      </section>
+      <footer class="footer">
+        <div class="container">
+          <div class="copyright-text">
+            Copyright&nbsp;&copy;&nbsp;<span id="currentYear"></span>&nbsp;Kotak
+            Mahindra Bank. All Rights Reserved
+          </div>
+        </div>
+      </footer>
+    </div>
 
-        <script src="js/jquery.min.js"></script>
-        <script src="js/script.js"></script>
-    </body>
+    <div id="txnHistory_Modal" class="modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          Transaction History
+          <span class="close"></span>
+        </div>
+        <div class="modal-body">
+          <div class="txn-list">
+            <table>
+              <tr>
+                <th>Date & Time</th>
+                <th>Txn. No</th>
+                <th>Amount</th>
+              </tr>
+              <tr>
+                <td>28/03/2024 12:20 AM</td>
+                <td>TXNABC1234567</td>
+                <td>1200.00</td>
+              </tr>
+              <tr>
+                <td>28/03/2024 12:20 AM</td>
+                <td>TXNABC1234567</td>
+                <td>1200.00</td>
+              </tr>
+              <tr>
+                <td>28/03/2024 12:20 AM</td>
+                <td>TXNABC1234567</td>
+                <td>1200.00</td>
+              </tr>
+              <tr>
+                <td>28/03/2024 12:20 AM</td>
+                <td>TXNABC1234567</td>
+                <td>1200.00</td>
+              </tr>
+              <tr>
+                <td>28/03/2024 12:20 AM</td>
+                <td>TXNABC1234567</td>
+                <td>1200.00</td>
+              </tr>
+              <tr>
+                <td>28/03/2024 12:20 AM</td>
+                <td>TXNABC1234567</td>
+                <td>1200.00</td>
+              </tr>
+              <tr>
+                <td>28/03/2024 12:20 AM</td>
+                <td>TXNABC1234567</td>
+                <td>1200.00</td>
+              </tr>
+              <tr>
+                <td>28/03/2024 12:20 AM</td>
+                <td>TXNABC1234567</td>
+                <td>1200.00</td>
+              </tr>
+              <tr>
+                <td>28/03/2024 12:20 AM</td>
+                <td>TXNABC1234567</td>
+                <td>1200.00</td>
+              </tr>
+              <tr>
+                <td>28/03/2024 12:20 AM</td>
+                <td>TXNABC1234567</td>
+                <td>1200.00</td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/script.js"></script>
+  </body>
 </html>
