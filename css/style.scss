@@ -47,10 +47,6 @@ strong {
     align-items: center;
     flex: 1 0 auto;
 
-    .container > .row {
-        align-items: center;
-    }
-
     .heading {
         text-align: center;
         margin-bottom: 0;
@@ -69,9 +65,8 @@ strong {
     }
 
     .artwork {
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        margin-bottom: 30px;
+        text-align: center;
 
         img {
             height: 250px;
@@ -89,11 +84,20 @@ strong {
         .info-msg {
             text-align: center;
             margin-bottom: 20px;
+
+            img {
+                margin-bottom: 20px;
+            }
+
+            span {
+                display: block;
+            }
         }
 
         .form-group {
             position: relative;
             background: none;
+            margin-bottom: 20px;
 
             .form-control {
                 border: 1px solid #ccc;
@@ -107,6 +111,13 @@ strong {
                 z-index: 0;
                 outline: 0;
             }
+
+            .error {
+                color: red;
+                font-size: 13px;
+                display: none;
+                margin-top: 5px;
+            }
         }
 
         .control-group {
@@ -115,7 +126,6 @@ strong {
             display: flex;
             flex-direction: column;
             align-items: center;
-            margin-bottom: 20px;
             overflow: hidden;
             border-radius: 3px;
 
@@ -136,6 +146,7 @@ strong {
                 cursor: pointer;
                 padding-right: 40px;
                 white-space: normal;
+                border-radius: 0;
 
                 option {
                     font-size: 14px;
@@ -156,7 +167,7 @@ strong {
             column-gap: 10px;
             max-width: 350px;
             margin: 0 auto;
-            margin-bottom: 20px;
+
             .form-control {
                 border: 1px solid #ccc;
                 text-align: center;
@@ -172,19 +183,32 @@ strong {
             }
         }
 
+        .digit-group + .error {
+            text-align: center;
+            margin-top: 5px;
+        }
+
+        .timer {
+            background: #f5f5f5;
+            padding: 5px 15px;
+            font-size: 14px;
+            color: #959292;
+            margin-bottom: 10px;
+            display: inline-flex;
+            border-radius: 40px;
+        }
+
         .resend-sec {
             text-align: center;
             margin-bottom: 20px;
-            .timer {
-                font-weight: 600;
-                font-size: 14px;
-                color: #0070e0;
-                margin-bottom: 4px;
-            }
 
             .resend {
                 a {
                     color: #0070e0;
+                    &[disabled] {
+                        pointer-events: none;
+                        opacity: 0.5;
+                    }
                 }
             }
         }
@@ -224,42 +248,9 @@ strong {
 
         .history {
             text-align: center;
-            margin-bottom: 20px;
+            margin-top: 10px;
             a {
                 color: #0070e0;
-            }
-        }
-
-        .txn-list {
-            margin-bottom: 20px;
-            overflow-x: auto;
-            padding: 15px;
-            background: #f5f5f5;
-            border-radius: 3px;
-
-            table {
-                width: 100%;
-                border-collapse: collapse;
-                background-color: #fff;
-
-                tr {
-                    th {
-                        color: red;
-                        font-weight: 500;
-                        font-size: 14px;
-                    }
-
-                    td {
-                        font-size: 13px;
-                    }
-
-                    td,
-                    th {
-                        border: 1px solid #ccc;
-                        padding: 10px;
-                        white-space: nowrap;
-                    }
-                }
             }
         }
 
@@ -285,9 +276,100 @@ strong {
 .footer {
     .copyright-text {
         display: flex;
+        flex-wrap: wrap;
         align-items: center;
         justify-content: center;
         min-height: 80px;
         padding: 15px 0;
+    }
+}
+
+.modal {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    padding: 12px;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+
+    .modal-content {
+        background-color: #fefefe;
+        margin: 0 auto;
+        width: 100%;
+        max-width: 600px;
+        border-radius: 3px;
+        animation: fadeIn 500ms ease-in-out;
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        .modal-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: relative;
+            padding: 20px;
+            font-size: 20px;
+            .close {
+                background-image: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 20px 20px" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"%3E%3Cline x1="18" y1="6" x2="6" y2="18"/%3E%3Cline x1="6" y1="6" x2="18" y2="18"/%3E%3C/svg%3E');
+                background-size: 20px 20px;
+                width: 20px;
+                height: 20px;
+                display: inline-block;
+                cursor: pointer;
+                opacity: 0.4;
+                transition: opacity 300ms;
+
+                &:hover {
+                    opacity: 1;
+                }
+            }
+        }
+
+        .modal-body {
+            .txn-list {
+                overflow-x: auto;
+                padding: 20px;
+                background: #f5f5f5;
+                border-radius: 3px;
+
+                table {
+                    width: 100%;
+                    border-collapse: collapse;
+                    background-color: #fff;
+
+                    tr {
+                        th {
+                            color: red;
+                            font-weight: 500;
+                            font-size: 14px;
+                        }
+
+                        td {
+                            font-size: 13px;
+                        }
+
+                        td,
+                        th {
+                            border: 1px solid #ccc;
+                            padding: 10px;
+                            white-space: nowrap;
+                        }
+                    }
+                }
+            }
+        }
     }
 }
