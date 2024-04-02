@@ -46,6 +46,7 @@ strong {
   display: -ms-inline-flexbox;
   display: inline-flex;
 }
+.header .navbar .logo object,
 .header .navbar .logo img {
   height: 50px;
 }
