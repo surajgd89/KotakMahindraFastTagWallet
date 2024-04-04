@@ -6,6 +6,8 @@ html {
     --border: #c6d9e2;
     --content: #101010;
     --subcontent: #6f6f6f;
+    --success: #00c851;
+    --failed: #ff4444;
 }
 
 body {
@@ -30,6 +32,8 @@ strong {
 }
 
 .header {
+    background-color: #fff;
+    border-bottom: 1px solid #e5f0f5;
     .navbar {
         display: flex;
         align-items: center;
@@ -48,10 +52,23 @@ strong {
 
 .content {
     padding: 60px 0;
-    background: #f4fbff;
+    background-color: #f4fbff;
     display: flex;
     align-items: center;
     flex: 1 0 auto;
+    background-image: url('../images/kotak-artwork.png');
+    background-repeat: no-repeat;
+    background-position: right bottom;
+    background-attachment: fixed;
+    background-size: auto;
+
+    @media (max-width: 1400px) {
+        background-size: contain;
+    }
+
+    @media (max-width: 768px) {
+        padding: 40px 0;
+    }
 
     .heading {
         text-align: center;
@@ -62,20 +79,20 @@ strong {
             font-size: 16px;
             text-transform: uppercase;
             color: var(--subcontent);
+
+            @media (max-width: 768px) {
+                font-size: 14px;
+            }
         }
         > div {
             font-weight: 700;
             font-size: 38px;
             color: var(--content);
-        }
-    }
+            text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff;
 
-    .artwork {
-        margin-bottom: 30px;
-        text-align: center;
-
-        img {
-            height: 250px;
+            @media (max-width: 768px) {
+                font-size: 30px;
+            }
         }
     }
 
@@ -84,8 +101,34 @@ strong {
         margin: 40px auto;
         padding: 40px;
         max-width: 600px;
-        border-radius: 3px;
+        border-radius: 6px;
         box-shadow: 0 8px 12px #00000014;
+        transition: all 300ms;
+        animation-name: fadeUp;
+        animation-fill-mode: both;
+        animation-duration: 500ms;
+        transform-origin: center;
+
+        @media (max-width: 768px) {
+            padding: 30px;
+            margin: 30px auto;
+        }
+
+        @media (max-width: 576px) {
+            padding: 25px;
+            margin: 25px auto;
+        }
+
+        @keyframes fadeUp {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
 
         .form-control {
             border: 1px solid var(--border);
@@ -202,7 +245,7 @@ strong {
                 color: #fff;
                 padding: 5px;
                 font-size: 13px;
-                background-color: #00c851;
+                background-color: var(--success);
                 border-radius: 3px;
                 text-decoration: none;
             }
@@ -210,7 +253,7 @@ strong {
                 color: #fff;
                 padding: 5px;
                 font-size: 13px;
-                background-color: #ff4444;
+                background-color: var(--failed);
                 border-radius: 3px;
                 text-decoration: none;
             }
@@ -225,15 +268,15 @@ strong {
                 margin-bottom: 10px;
 
                 &.otp {
-                    color: #00c851;
+                    color: var(--success);
                 }
 
                 &.success {
-                    color: #00c851;
+                    color: var(--success);
                 }
 
                 &.failed {
-                    color: #ff4444;
+                    color: var(--failed);
                 }
             }
 
@@ -241,11 +284,11 @@ strong {
                 font-weight: 600;
 
                 &.success {
-                    color: #00c851;
+                    color: var(--success);
                 }
 
                 &.failed {
-                    color: #ff4444;
+                    color: var(--failed);
                 }
             }
 
@@ -293,6 +336,10 @@ strong {
             align-items: center;
             column-gap: 5px;
             border-radius: 40px;
+
+            .time {
+                width: 35px;
+            }
         }
 
         .resend-sec {
@@ -313,8 +360,16 @@ strong {
             list-style: none;
             padding: 0;
             margin: 0;
+
             border: 1px solid var(--border);
             border-radius: 3px;
+
+            &.success {
+                border: 1px dashed var(--success);
+            }
+            &.failed {
+                border: 1px dashed var(--failed);
+            }
 
             li {
                 padding: 15px;
@@ -370,6 +425,8 @@ strong {
 }
 
 .footer {
+    background-color: #fff;
+    border-top: 1px solid #e5f0f5;
     .copyright-text {
         display: flex;
         flex-wrap: wrap;

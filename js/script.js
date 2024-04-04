@@ -1,5 +1,6 @@
 var timeRemaining = 120;
 var timerInterval;
+let otp = '';
 
 $(function () {
     $('#currentYear').text(new Date().getFullYear());
@@ -10,7 +11,6 @@ $(function () {
     $('#sec_Failed').hide();
     $('#input_Number').focus();
 
-    startTimer();
     selectAny($('#select_AnyOne').val());
 
     $('#select_AnyOne').on('change', function () {
@@ -23,7 +23,12 @@ $(function () {
     $('#btn_Submit').on('click', function () {
         if ($('#input_Number').val().length > 0) {
             $('#sec_Initial').hide();
-            $('#sec_OTP').fadeIn(300);
+            removeOTPFrmUrl();
+            startTimer();
+            generateOTP();
+            $('#btn_VerifyOTP').attr('disabled', true);
+            $('#sec_OTP').show();
+
             $('.digit:first-child').focus();
         } else {
             $('#input_Number_Error').show();
@@ -36,12 +41,6 @@ $(function () {
         } else {
             $('#input_Number_Error').show();
         }
-    });
-
-    $('#btn_VerifyOTP').on('click', function () {
-        $('#sec_OTP').hide();
-        $('#sec_Details').fadeIn(300);
-        $('#input_AddMoney').focus();
     });
 
     $('#input_AddMoney').on('input', function () {
@@ -101,34 +100,60 @@ $(function () {
         }
     });
 
+    $('.digit').on('input', function () {
+        if ($(this).val().length > 0) {
+            $('#btn_VerifyOTP').attr('disabled', false);
+        }
+    });
+
+    $('#btn_VerifyOTP').on('click', function () {
+        var digitVal = '';
+        $('.digit').each(function () {
+            digitVal += $(this).val();
+        });
+
+        if (digitVal != otp) {
+            $('#digit_Error').show();
+        } else {
+            $('#digit_Error').hide();
+            $('#sec_OTP').hide();
+            $('#sec_Details').show();
+            $('#input_AddMoney').focus();
+            removeOTPFrmUrl();
+        }
+    });
+
+    $('#view_SuccessDetails').on('click', function (e) {
+        $('#sec_Details').hide();
+        $('#sec_Success').show();
+    });
+
+    $('#view_FailedDetails').on('click', function (e) {
+        $('#sec_Details').hide();
+        $('#sec_Failed').show();
+    });
+
     //Modal
     $('#view_TransactionHistory').on('click', function (e) {
         e.preventDefault();
         $('#modal_TransactionHistory').css('display', 'flex');
+        $('body').css('overflow', 'hidden');
     });
 
     $('.close').on('click', function (e) {
         e.preventDefault();
         $('#modal_TransactionHistory').css('display', 'none');
+        $('body').css('overflow', 'auto');
     });
 
     $('#modal_TransactionHistory').click(function (e) {
         e.stopPropagation();
         $('#modal_TransactionHistory').css('display', 'none');
+        $('body').css('overflow', 'auto');
     });
 
     $('.modal-content').on('click', function (e) {
         e.stopPropagation();
-    });
-
-    $('#view_SuccessDetails').on('click', function (e) {
-        $('#sec_Details').hide();
-        $('#sec_Success').fadeIn(300);
-    });
-
-    $('#view_FailedDetails').on('click', function (e) {
-        $('#sec_Details').hide();
-        $('#sec_Failed').fadeIn(300);
     });
 });
 
@@ -155,9 +180,26 @@ function updateTimer() {
         clearInterval(timerInterval);
         $('.timer').hide();
         $('#link_resendOTP').attr('disabled', false);
+        $('#btn_VerifyOTP').attr('disabled', false);
     }
 }
 
 function startTimer() {
     timerInterval = setInterval(updateTimer, 1000);
+}
+
+function generateOTP() {
+    for (var i = 0; i < 6; i++) {
+        otp += Math.floor(Math.random() * 10);
+    }
+    var currentUrl = window.location.href;
+    var urlWithOTP = currentUrl + (currentUrl.includes('?') ? '&' : '?') + 'otp=' + otp;
+    window.history.pushState({}, '', urlWithOTP);
+}
+
+function removeOTPFrmUrl() {
+    var url = new URL(window.location.href);
+    url.searchParams.delete('otp');
+    var newUrl = url.toString();
+    window.history.pushState({}, '', newUrl);
 }

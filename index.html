@@ -35,159 +35,155 @@
                                 <div>Kotak NETC FASTag Wallet</div>
                             </h1>
                         </div>
-                        <div class="col-12">
-                            <div class="page-form">
-                                <!-- sec_Initial -->
-                                <div id="sec_Initial">
-                                    <div class="form-group">
-                                        <div class="control-group">
-                                            <select class="form-control" id="select_AnyOne">
-                                                <option value="VRN / VIN / Chasis No.">VRN / VIN / Chasis No. For Retail Fastag Wallet</option>
-                                                <option value="Customer ID">Customer ID For Fleet Master Account</option>
-                                                <option value="CP ID">CP ID For Channel Partner eMoney Account</option>
-                                            </select>
-                                            <input type="text" autocomplete="off" class="form-control" id="input_Number" placeholder="Enter text here..." />
-                                        </div>
-                                        <span class="error" id="input_Number_Error">This field is required</span>
+                    </div>
+                    <div class="row">
+                        <div class="col-xl-7 col-lg-12">
+                            <!-- sec_Initial -->
+                            <div class="page-form" id="sec_Initial">
+                                <div class="form-group">
+                                    <div class="control-group">
+                                        <select class="form-control" id="select_AnyOne">
+                                            <option value="VRN / VIN / Chasis No.">VRN / VIN / Chasis No. For Retail Fastag Wallet</option>
+                                            <option value="Customer ID">Customer ID For Fleet Master Account</option>
+                                            <option value="CP ID">CP ID For Channel Partner eMoney Account</option>
+                                        </select>
+                                        <input type="text" autocomplete="off" class="form-control" id="input_Number" placeholder="Enter text here..." />
                                     </div>
-                                    <div class="button-group">
-                                        <button type="button" class="btn" id="btn_Submit">SUBMIT</button>
+                                    <div class="error" id="input_Number_Error">This field is required</div>
+                                </div>
+                                <div class="button-group">
+                                    <button type="button" class="btn" id="btn_Submit">SUBMIT</button>
+                                </div>
+                            </div>
+                            <!-- sec_OTP -->
+                            <div class="page-form" id="sec_OTP">
+                                <div class="info-msg">
+                                    <i class="fal fa-shield-check otp"></i>
+                                    <h3>OTP Verification</h3>
+                                    <span
+                                        >OTP has been sent to your <br />registered mobile number
+                                        <strong>+91 XXX XXX 5153</strong>
+                                    </span>
+                                </div>
+                                <div class="form-group">
+                                    <div class="digit-group">
+                                        <input autocomplete="off" class="form-control digit" type="text" maxlength="1" size="1" id="digit1" oninput="this.value = this.value.replace(/[^0-9]/g, '');" />
+                                        <input autocomplete="off" class="form-control digit" type="text" maxlength="1" size="1" id="digit2" oninput="this.value = this.value.replace(/[^0-9]/g, '');" />
+                                        <input autocomplete="off" class="form-control digit" type="text" maxlength="1" size="1" id="digit3" oninput="this.value = this.value.replace(/[^0-9]/g, '');" />
+                                        <input autocomplete="off" class="form-control digit" type="text" maxlength="1" size="1" id="digit4" oninput="this.value = this.value.replace(/[^0-9]/g, '');" />
+                                        <input autocomplete="off" class="form-control digit" type="text" maxlength="1" size="1" id="digit5" oninput="this.value = this.value.replace(/[^0-9]/g, '');" />
+                                        <input autocomplete="off" class="form-control digit" type="text" maxlength="1" size="1" id="digit6" oninput="this.value = this.value.replace(/[^0-9]/g, '');" />
+                                    </div>
+                                    <div class="error" id="digit_Error">Incorrect OTP</div>
+                                </div>
+                                <div class="resend-sec">
+                                    <div class="timer">
+                                        <span class="fal fa-clock"></span> Time Remaining:&nbsp;
+                                        <span class="time" id="countdown">00:00</span>
+                                    </div>
+                                    <div class="resend">
+                                        Don't receive the OTP ?
+                                        <a href="#" class="link" id="link_resendOTP" disabled>Resend OTP</a>
                                     </div>
                                 </div>
-
-                                <!-- sec_OTP -->
-                                <div id="sec_OTP">
-                                    <div class="info-msg">
-                                        <i class="fal fa-shield-check otp"></i>
-                                        <h3>OTP Verification</h3>
-                                        <span
-                                            >OTP has been sent to your <br />registered mobile number
-                                            <strong>+91 XXX XXX 5153</strong>
-                                        </span>
-                                    </div>
-                                    <div class="form-group">
-                                        <div class="digit-group">
-                                            <input autocomplete="off" class="form-control digit" type="text" maxlength="1" size="1" id="digit1" oninput="this.value = this.value.replace(/[^0-9]/g, '');" />
-                                            <input autocomplete="off" class="form-control digit" type="text" maxlength="1" size="1" id="digit2" oninput="this.value = this.value.replace(/[^0-9]/g, '');" />
-                                            <input autocomplete="off" class="form-control digit" type="text" maxlength="1" size="1" id="digit3" oninput="this.value = this.value.replace(/[^0-9]/g, '');" />
-                                            <input autocomplete="off" class="form-control digit" type="text" maxlength="1" size="1" id="digit4" oninput="this.value = this.value.replace(/[^0-9]/g, '');" />
-                                            <input autocomplete="off" class="form-control digit" type="text" maxlength="1" size="1" id="digit5" oninput="this.value = this.value.replace(/[^0-9]/g, '');" />
-                                            <input autocomplete="off" class="form-control digit" type="text" maxlength="1" size="1" id="digit6" oninput="this.value = this.value.replace(/[^0-9]/g, '');" />
-                                        </div>
-                                        <span class="error">Incorrect OTP</span>
-                                    </div>
-                                    <div class="resend-sec">
-                                        <div class="timer">
-                                            <span class="fal fa-clock"></span> Time Remaining:&nbsp;
-                                            <span id="countdown">01:25</span>
-                                        </div>
-                                        <div class="resend">
-                                            Don't receive the OTP ?
-                                            <a href="#" class="link" id="link_resendOTP" disabled>Resend OTP</a>
-                                        </div>
-                                    </div>
-                                    <div class="button-group">
-                                        <button type="button" class="btn" id="btn_VerifyOTP">VERIFY OTP</button>
-                                    </div>
+                                <div class="button-group">
+                                    <button type="button" class="btn" id="btn_VerifyOTP">VERIFY OTP</button>
                                 </div>
-
-                                <!-- sec_Details -->
-                                <div id="sec_Details">
-                                    <ul class="details-list">
-                                        <li>
-                                            <div class="lbl">Current Balance</div>
-                                            <div class="val">INR 539.00</div>
-                                        </li>
-                                        <li>
-                                            <div class="lbl">Mobile Number</div>
-                                            <div class="val">+91 XXX XXX 5153</div>
-                                        </li>
-                                        <li>
-                                            <div class="lbl">VRN / VIN / Chasis No. For Retail Fastag Wallet</div>
-                                            <div class="val">XXXXMH0000XXXXXX</div>
-                                        </li>
-                                        <li>
-                                            <div class="lbl">Add Money</div>
-                                            <div class="val">
-                                                <div class="form-group">
-                                                    <input type="text" placeholder="Enter Amount here" pattern="^[0-9]" autocomplete="off" id="input_AddMoney" class="form-control" />
-                                                </div>
+                            </div>
+                            <!-- sec_Details -->
+                            <div class="page-form" id="sec_Details">
+                                <ul class="details-list">
+                                    <li>
+                                        <div class="lbl">Current Balance</div>
+                                        <div class="val">INR 539.00</div>
+                                    </li>
+                                    <li>
+                                        <div class="lbl">Mobile Number</div>
+                                        <div class="val">+91 XXX XXX 5153</div>
+                                    </li>
+                                    <li>
+                                        <div class="lbl">VRN / VIN / Chasis No. For Retail Fastag Wallet</div>
+                                        <div class="val">XXXXMH0000XXXXXX</div>
+                                    </li>
+                                    <li>
+                                        <div class="lbl">Add Money</div>
+                                        <div class="val">
+                                            <div class="form-group">
+                                                <input type="text" placeholder="Enter Amount here" pattern="^[0-9]" autocomplete="off" id="input_AddMoney" class="form-control" />
                                             </div>
-                                        </li>
-                                    </ul>
-                                    <div class="button-group">
-                                        <button type="button" class="btn" id="proceed_Btn" disabled>PROCEED TO PAY</button>
-                                    </div>
-                                    <div class="history">
-                                        <a href="#" class="link" id="view_TransactionHistory">View Transaction History</a>
-                                    </div>
-                                    <div class="response-btns">
-                                        <a href="#" class="success" id="view_SuccessDetails">Success Response </a>
-                                        <a href="#" class="failed" id="view_FailedDetails"> Failed Response</a>
-                                    </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                                <div class="button-group">
+                                    <button type="button" class="btn" id="proceed_Btn" disabled>PROCEED TO PAY</button>
                                 </div>
-
-                                <!-- sec_Success -->
-                                <div id="sec_Success">
-                                    <div class="info-msg">
-                                        <i class="fal fa-check-circle success"></i>
-                                        <h3 class="success">Success</h3>
-                                        <span>We are processing the same and you will be notified via SMS and Email.</span>
-                                    </div>
-                                    <ul class="details-list">
-                                        <li>
-                                            <div class="lbl">Order No</div>
-                                            <div class="val">TXNABC123456789</div>
-                                        </li>
-                                        <li>
-                                            <div class="lbl">PG Ref. No</div>
-                                            <div class="val">PGCE12345678908</div>
-                                        </li>
-                                        <li>
-                                            <div class="lbl">CCAvenue Ref. No</div>
-                                            <div class="val">CCAV_12345678123</div>
-                                        </li>
-                                        <li>
-                                            <div class="lbl">Date & Time</div>
-                                            <div class="val">28/03/2024 12:20 AM</div>
-                                        </li>
-                                        <li>
-                                            <div class="lbl">Amount</div>
-                                            <div class="val">999999.00</div>
-                                        </li>
-                                    </ul>
+                                <div class="history">
+                                    <a href="#" class="link" id="view_TransactionHistory">View Transaction History</a>
                                 </div>
-
-                                <!-- sec_Failed -->
-                                <div id="sec_Failed">
-                                    <div class="info-msg">
-                                        <i class="fal fa-times-circle failed"></i>
-                                        <h3 class="failed">Failed</h3>
-                                        <span>Your request could not be procesed at this time. Please try after some time.</span>
-                                    </div>
-                                    <ul class="details-list">
-                                        <li>
-                                            <div class="lbl">Order No</div>
-                                            <div class="val">TXNABC123456789</div>
-                                        </li>
-                                        <li>
-                                            <div class="lbl">PG Ref. No</div>
-                                            <div class="val">PGCE12345678908</div>
-                                        </li>
-                                        <li>
-                                            <div class="lbl">CCAvenue Ref. No</div>
-                                            <div class="val">CCAV_12345678123</div>
-                                        </li>
-                                        <li>
-                                            <div class="lbl">Date & Time</div>
-                                            <div class="val">28/03/2024 12:20 AM</div>
-                                        </li>
-                                        <li>
-                                            <div class="lbl">Amount</div>
-                                            <div class="val">999999.00</div>
-                                        </li>
-                                    </ul>
+                                <div class="response-btns">
+                                    <a href="#" class="success" id="view_SuccessDetails">Success Response </a>
+                                    <a href="#" class="failed" id="view_FailedDetails"> Failed Response</a>
                                 </div>
+                            </div>
+                            <!-- sec_Success -->
+                            <div class="page-form" id="sec_Success">
+                                <div class="info-msg">
+                                    <i class="fal fa-check-circle success"></i>
+                                    <h3 class="success">Success</h3>
+                                    <span>We are processing the same and you will be notified via SMS and Email.</span>
+                                </div>
+                                <ul class="details-list success">
+                                    <li>
+                                        <div class="lbl">Order No</div>
+                                        <div class="val">TXNABC123456789</div>
+                                    </li>
+                                    <li>
+                                        <div class="lbl">PG Ref. No</div>
+                                        <div class="val">PGCE12345678908</div>
+                                    </li>
+                                    <li>
+                                        <div class="lbl">CCAvenue Ref. No</div>
+                                        <div class="val">CCAV_12345678123</div>
+                                    </li>
+                                    <li>
+                                        <div class="lbl">Date & Time</div>
+                                        <div class="val">28/03/2024 12:20 AM</div>
+                                    </li>
+                                    <li>
+                                        <div class="lbl">Amount</div>
+                                        <div class="val">999999.00</div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!-- sec_Failed -->
+                            <div class="page-form" id="sec_Failed">
+                                <div class="info-msg">
+                                    <i class="fal fa-times-circle failed"></i>
+                                    <h3 class="failed">Failed</h3>
+                                    <span>Your request could not be procesed at this time. Please try after some time.</span>
+                                </div>
+                                <ul class="details-list failed">
+                                    <li>
+                                        <div class="lbl">Order No</div>
+                                        <div class="val">TXNABC123456789</div>
+                                    </li>
+                                    <li>
+                                        <div class="lbl">PG Ref. No</div>
+                                        <div class="val">PGCE12345678908</div>
+                                    </li>
+                                    <li>
+                                        <div class="lbl">CCAvenue Ref. No</div>
+                                        <div class="val">CCAV_12345678123</div>
+                                    </li>
+                                    <li>
+                                        <div class="lbl">Date & Time</div>
+                                        <div class="val">28/03/2024 12:20 AM</div>
+                                    </li>
+                                    <li>
+                                        <div class="lbl">Amount</div>
+                                        <div class="val">999999.00</div>
+                                    </li>
+                                </ul>
                             </div>
                         </div>
                     </div>

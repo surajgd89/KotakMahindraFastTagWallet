@@ -6,6 +6,8 @@ html {
   --border: #c6d9e2;
   --content: #101010;
   --subcontent: #6f6f6f;
+  --success: #00c851;
+  --failed: #ff4444;
 }
 
 body {
@@ -35,6 +37,10 @@ strong {
   min-height: 100%;
 }
 
+.header {
+  background-color: #fff;
+  border-bottom: 1px solid #e5f0f5;
+}
 .header .navbar {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -58,7 +64,7 @@ strong {
 
 .content {
   padding: 60px 0;
-  background: #f4fbff;
+  background-color: #f4fbff;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -68,6 +74,21 @@ strong {
   -webkit-box-flex: 1;
       -ms-flex: 1 0 auto;
           flex: 1 0 auto;
+  background-image: url("../images/kotak-artwork.png");
+  background-repeat: no-repeat;
+  background-position: right bottom;
+  background-attachment: fixed;
+  background-size: auto;
+}
+@media (max-width: 1400px) {
+  .content {
+    background-size: contain;
+  }
+}
+@media (max-width: 768px) {
+  .content {
+    padding: 40px 0;
+  }
 }
 .content .heading {
   text-align: center;
@@ -79,26 +100,76 @@ strong {
   text-transform: uppercase;
   color: var(--subcontent);
 }
+@media (max-width: 768px) {
+  .content .heading > span {
+    font-size: 14px;
+  }
+}
 .content .heading > div {
   font-weight: 700;
   font-size: 38px;
   color: var(--content);
+  text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff;
 }
-.content .artwork {
-  margin-bottom: 30px;
-  text-align: center;
-}
-.content .artwork img {
-  height: 250px;
+@media (max-width: 768px) {
+  .content .heading > div {
+    font-size: 30px;
+  }
 }
 .content .page-form {
   background-color: #fff;
   margin: 40px auto;
   padding: 40px;
   max-width: 600px;
-  border-radius: 3px;
+  border-radius: 6px;
   -webkit-box-shadow: 0 8px 12px rgba(0, 0, 0, 0.0784313725);
           box-shadow: 0 8px 12px rgba(0, 0, 0, 0.0784313725);
+  -webkit-transition: all 300ms;
+  transition: all 300ms;
+  -webkit-animation-name: fadeUp;
+          animation-name: fadeUp;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+  -webkit-animation-duration: 500ms;
+          animation-duration: 500ms;
+  -webkit-transform-origin: center;
+          transform-origin: center;
+}
+@media (max-width: 768px) {
+  .content .page-form {
+    padding: 30px;
+    margin: 30px auto;
+  }
+}
+@media (max-width: 576px) {
+  .content .page-form {
+    padding: 25px;
+    margin: 25px auto;
+  }
+}
+@-webkit-keyframes fadeUp {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(20px);
+            transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+@keyframes fadeUp {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(20px);
+            transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
 }
 .content .page-form .form-control {
   border: 1px solid var(--border);
@@ -238,7 +309,7 @@ strong {
   color: #fff;
   padding: 5px;
   font-size: 13px;
-  background-color: #00c851;
+  background-color: var(--success);
   border-radius: 3px;
   text-decoration: none;
 }
@@ -246,7 +317,7 @@ strong {
   color: #fff;
   padding: 5px;
   font-size: 13px;
-  background-color: #ff4444;
+  background-color: var(--failed);
   border-radius: 3px;
   text-decoration: none;
 }
@@ -259,22 +330,22 @@ strong {
   margin-bottom: 10px;
 }
 .content .page-form .info-msg i.otp {
-  color: #00c851;
+  color: var(--success);
 }
 .content .page-form .info-msg i.success {
-  color: #00c851;
+  color: var(--success);
 }
 .content .page-form .info-msg i.failed {
-  color: #ff4444;
+  color: var(--failed);
 }
 .content .page-form .info-msg h3 {
   font-weight: 600;
 }
 .content .page-form .info-msg h3.success {
-  color: #00c851;
+  color: var(--success);
 }
 .content .page-form .info-msg h3.failed {
-  color: #ff4444;
+  color: var(--failed);
 }
 .content .page-form .info-msg span {
   display: block;
@@ -325,6 +396,9 @@ strong {
           column-gap: 5px;
   border-radius: 40px;
 }
+.content .page-form .timer .time {
+  width: 35px;
+}
 .content .page-form .resend-sec {
   text-align: center;
   margin-bottom: 20px;
@@ -339,6 +413,12 @@ strong {
   margin: 0;
   border: 1px solid var(--border);
   border-radius: 3px;
+}
+.content .page-form .details-list.success {
+  border: 1px dashed var(--success);
+}
+.content .page-form .details-list.failed {
+  border: 1px dashed var(--failed);
 }
 .content .page-form .details-list li {
   padding: 15px;
@@ -384,6 +464,10 @@ strong {
   margin-top: 10px;
 }
 
+.footer {
+  background-color: #fff;
+  border-top: 1px solid #e5f0f5;
+}
 .footer .copyright-text {
   display: -webkit-box;
   display: -ms-flexbox;
